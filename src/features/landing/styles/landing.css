@@ -1,0 +1,25 @@
+.landingContainer {
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+
+/* Styles for screens wider than 1200px */
+@media (min-width: 1200px) {
+    .landingContainer {
+        margin: 0 auto;
+        max-width: 1400px;
+        padding: 0;
+
+    }
+
+    .landingContainer {
+        /* Use flexbox layout */
+        display: flex;
+
+        /* Arrange children in a column */
+        flex-direction: column;
+
+    }
+
+}
