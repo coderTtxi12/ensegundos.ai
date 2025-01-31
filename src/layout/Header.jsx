@@ -16,17 +16,18 @@ function Header() {
         top: 0,
         mx: "auto", // Margin-left: auto; Margin-right: auto
         width: "100%",
-        backgroundColor: 'transparent',
-        boxShadow: 'none' // Remove shadow
+        backgroundColor: "transparent",
+        boxShadow: "none", // Remove shadow
       }}
     >
       <Toolbar>
+        
         {/* Logo */}
 
         <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
           <Typography
             variant="h6"
-            sx={{ fontWeight: "bold", color: "primary.main" }}
+            sx={{ fontWeight: "bold", color: "text.primary" }}
           >
             inseconds.ai
           </Typography>
@@ -35,15 +36,24 @@ function Header() {
         {/* Navigation links */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button sx={{ mr: 2, textTransform: "none" }}>Pricing</Button>
-            <Button sx={{ mr: 2, textTransform: "none" }}>Login</Button>
+            <Button
+              sx={{ mr: 2, textTransform: "none", color: "text.primary" }}
+            >
+              Pricing
+            </Button>
           </Box>
 
           <Button
-            variant="outlined"
-            sx={{ textTransform: "none", borderRadius: 20 }}
+            variant="contained"
+            color="primary"
+            size="large"
+            sx={{
+              textTransform: "none",
+              color: "text.primary",
+              fontWeight: 600,
+            }}
           >
-            Sign up
+            Get Started
           </Button>
         </Box>
       </Toolbar>

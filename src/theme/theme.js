@@ -48,12 +48,15 @@ const theme = createTheme({
         h2: {
             fontSize: '2.25rem', // ~36px
             fontWeight: 600,
-            lineHeight: 1.3,    // Pink for a branded highlight
+            lineHeight: 1.3,
         },
         h3: {
             fontSize: '2rem',   // ~32px
             fontWeight: 600,
             lineHeight: 1.3,
+        },
+        h6: {
+            fontWeight: "bold",
         },
         body1: {
             fontSize: '1rem',   // ~16px
