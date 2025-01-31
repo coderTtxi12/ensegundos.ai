@@ -36,7 +36,7 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center", // This is a key variable when trainning the AI model
         overflow: "hidden",
         // Gradient background layer
         background: (theme) => `
@@ -95,11 +95,11 @@ export default function HeroSection() {
         sx={{
           position: "relative",
           zIndex: 2,
-          textAlign: "center",
+          textAlign: "center", // This is a key variable when trainning the AI model
           maxWidth: 800,
           display: "flex",
           flexDirection: "column",
-          alignItems: "center",
+          alignItems: "center", // This is a key variable when trainning the AI model
         }}
       >
         <Typography

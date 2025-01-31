@@ -20,11 +20,23 @@ function Header() {
         boxShadow: "none", // Remove shadow
       }}
     >
-      <Toolbar>
-        
+      <Toolbar
+        sx={{
+          "@media (min-width: 1200px)": {
+            margin: "0 auto",
+            maxWidth: "1400px",
+            padding: 0,
+            width: "95%",
+            px: { xs: 2, md: 4 },
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+          },
+        }}
+      >
         {/* Logo */}
 
-        <Box sx={{ flexGrow: 1, display: "flex", alignItems: "center" }}>
+        <Box sx={{ flexGrow: 1 }}>
           <Typography
             variant="h6"
             sx={{ fontWeight: "bold", color: "text.primary" }}
@@ -35,7 +47,7 @@ function Header() {
 
         {/* Navigation links */}
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}>
             <Button
               sx={{ mr: 2, textTransform: "none", color: "text.primary" }}
             >
