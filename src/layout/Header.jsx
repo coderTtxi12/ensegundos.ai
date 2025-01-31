@@ -14,15 +14,10 @@ function Header() {
         left: 0,
         right: 0,
         top: 0,
-        maxWidth: "1400px",
-        mx: "auto", // margin-left: auto; margin-right: auto
+        mx: "auto", // Margin-left: auto; Margin-right: auto
         width: "100%",
-
-        // Blur effect
-        backgroundColor: "white",
-        backdropFilter: "blur(10px)",
-        backgroundColor: "rgba(255, 255, 255, 0.7)",
-  
+        backgroundColor: 'transparent',
+        boxShadow: 'none' // Remove shadow
       }}
     >
       <Toolbar>
@@ -33,7 +28,7 @@ function Header() {
             variant="h6"
             sx={{ fontWeight: "bold", color: "primary.main" }}
           >
-            ensegundos.ai
+            inseconds.ai
           </Typography>
         </Box>
 
@@ -41,7 +36,6 @@ function Header() {
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <Button sx={{ mr: 2, textTransform: "none" }}>Pricing</Button>
-            <Button sx={{ mr: 2, textTransform: "none" }}>Help</Button>
             <Button sx={{ mr: 2, textTransform: "none" }}>Login</Button>
           </Box>
 
