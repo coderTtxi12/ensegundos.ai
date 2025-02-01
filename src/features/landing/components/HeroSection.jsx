@@ -1,11 +1,25 @@
 import React from "react";
-import { Box, Typography, Button, keyframes } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  keyframes,
+  Fade,
+  Slide,
+  Grow,
+  Zoom,
+  Collapse,
+} from "@mui/material";
+
 import useVantaBirds from "../hooks/useVantaBirds";
+
 import {
   containerStyleLeftColumn,
   containerStyleCenterColumn,
   glowButtonStyle,
 } from "../../../styles/layoutStyles";
+
+import useTransitions from "../hooks/useTransitions";
 
 // Pulse animation keyframes for the gradient effect
 const pulse = keyframes`
@@ -15,6 +29,10 @@ const pulse = keyframes`
 `;
 
 export default function HeroSection() {
+  // Custom hook for transitions
+  const transitions = useTransitions();
+
+  // Custom hook for Vanta Brids background
   const { vantaRef } = useVantaBirds({
     mouseControls: true,
     touchControls: true,
@@ -95,6 +113,8 @@ export default function HeroSection() {
         }}
       />
 
+      {/* Content container */}
+
       <Box
         sx={{
           position: "relative",
@@ -102,27 +122,35 @@ export default function HeroSection() {
           ...containerStyleCenterColumn,
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            mb: 2,
-            color: "text.primary",
-          }}
-        >
-          Build your next landing page inseconds with AI
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 4,
-            color: "text.secondary",
-          }}
-        >
-          No code, no headaches.
-          <br />
-          Instantly generates beautiful, high-converting landing pages with
-          AI-powered.
-        </Typography>
+        {/* Content */}
+
+        <Box ref={transitions.fadeOnce.ref}>
+          <Fade direction="up" in={transitions.fadeOnce.inView} timeout={1000}>
+            <Box>
+              <Typography
+                variant="h1"
+                sx={{
+                  mb: 2,
+                  color: "text.primary",
+                }}
+              >
+                Build your next landing page inseconds with AI
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 4,
+                  color: "text.secondary",
+                }}
+              >
+                No code, no headaches.
+                <br />
+                Instantly generates beautiful, high-converting landing pages
+                with AI-powered.
+              </Typography>
+            </Box>
+          </Fade>
+        </Box>
 
         {/* Call-to-action button */}
         <Button
