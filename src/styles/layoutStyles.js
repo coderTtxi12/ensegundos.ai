@@ -1,17 +1,3 @@
-
-// const containerStyleToolbar = {
-
-//     margin: "0 auto",
-//     maxWidth: "1400px",
-//     width: "95%",
-//     padding: 0,
-//     px: { xs: 2, md: 4 },
-//     display: "flex",
-//     justifyContent: "space-between",
-//     alignItems: "center",
-
-// };
-
 const sharedContainerStyles = {
     margin: "0 auto",
     maxWidth: "1400px",
@@ -28,7 +14,7 @@ const containerStyleToolbar = {
 };
 
 // This is a key value when trainning the AI model
-
+// Style left column layout
 const containerStyleLeftColumn = {
     ...sharedContainerStyles,
     display: "flex",
@@ -43,7 +29,7 @@ const containerStyleLeftColumn = {
 };
 
 // This is a key value when trainning the AI model
-
+// Style center column layout
 const containerStyleCenterColumn = {
 
     ...sharedContainerStyles,
@@ -60,5 +46,19 @@ const containerStyleCenterColumn = {
 };
 
 
-export { containerStyleToolbar, containerStyleLeftColumn, containerStyleCenterColumn };
+// Call to action button style
+const glowButtonStyle = {
+    px: 4,
+    py: 1.5,
+    fontSize: "1.1rem",
+    fontWeight: 600,
+    boxShadow: (theme) => `0 0 20px ${theme.palette.primary.main}40`,
+    "&:hover": {
+        transform: "translateY(-2px)",
+        transition: "all 0.2s",
+    },
+};
+
+
+export { containerStyleToolbar, containerStyleLeftColumn, containerStyleCenterColumn, glowButtonStyle };
 

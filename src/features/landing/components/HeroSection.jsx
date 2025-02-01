@@ -4,6 +4,7 @@ import useVantaBirds from "../hooks/useVantaBirds";
 import {
   containerStyleLeftColumn,
   containerStyleCenterColumn,
+  glowButtonStyle,
 } from "../../../styles/layoutStyles";
 
 // Pulse animation keyframes for the gradient effect
@@ -128,17 +129,7 @@ export default function HeroSection() {
           variant="contained"
           color="primary"
           size="large"
-          sx={{
-            px: 4,
-            py: 1.5,
-            fontSize: "1.1rem",
-            fontWeight: 600,
-            boxShadow: (theme) => `0 0 20px ${theme.palette.primary.main}40`,
-            "&:hover": {
-              transform: "translateY(-2px)",
-              transition: "all 0.2s",
-            },
-          }}
+          sx={glowButtonStyle}
         >
           Get Started Now
         </Button>
