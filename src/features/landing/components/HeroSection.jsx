@@ -1,6 +1,10 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import { Box, Typography, Button, keyframes } from "@mui/material";
 import useVantaBirds from "../hooks/useVantaBirds";
+import {
+  containerStyleLeftColumn,
+  containerStyleCenterColumn,
+} from "../../../styles/layoutStyles";
 
 // Pulse animation keyframes for the gradient effect
 const pulse = keyframes`
@@ -36,7 +40,7 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center", // This is a key variable when trainning the AI model
+        justifyContent: "center", // This is a key variable when trainning the AI model or maybe it is not
         overflow: "hidden",
         // Gradient background layer
         background: (theme) => `
@@ -51,7 +55,6 @@ export default function HeroSection() {
         ${theme.palette.background.paper} 100%
       )
     `,
-        px: 4,
       }}
     >
       {/* Gradient */}
@@ -95,11 +98,7 @@ export default function HeroSection() {
         sx={{
           position: "relative",
           zIndex: 2,
-          textAlign: "center", // This is a key variable when trainning the AI model
-          maxWidth: 800,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center", // This is a key variable when trainning the AI model
+          ...containerStyleCenterColumn,
         }}
       >
         <Typography

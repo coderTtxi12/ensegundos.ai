@@ -80,13 +80,13 @@ const theme = createTheme({
                     textTransform: 'none',
                 },
                 containedPrimary: {
-                    // Slightly darker pink on hover
+                    // Slightly darker pink on hover for glow effect
                     '&:hover': {
                         backgroundColor: '#E01384',
                     },
                 },
                 containedSecondary: {
-                    // Keeping the purple accent hover
+                    // Keeping the purple accent hover for glow effect
                     '&:hover': {
                         backgroundColor: '#7a00e0',
                     },

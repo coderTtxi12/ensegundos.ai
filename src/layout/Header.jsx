@@ -4,6 +4,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
+import { containerStyleToolbar } from "../styles/layoutStyles";
 
 function Header() {
   return (
@@ -20,20 +21,11 @@ function Header() {
         boxShadow: "none", // Remove shadow
       }}
     >
-      <Toolbar
-        sx={{
-          "@media (min-width: 1200px)": {
-            margin: "0 auto",
-            maxWidth: "1400px",
-            padding: 0,
-            width: "95%",
-            px: { xs: 2, md: 4 },
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-          },
-        }}
-      >
+
+      {/* Container style for consistent layout */}
+
+      <Toolbar sx={containerStyleToolbar}>
+
         {/* Logo */}
 
         <Box sx={{ flexGrow: 1 }}>
