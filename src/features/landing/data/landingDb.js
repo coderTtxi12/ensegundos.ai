@@ -1,5 +1,8 @@
 import benefit1 from "../../../assets/images/benefit1.jpg";
 import benefit2 from "../../../assets/images/benefit2.jpg";
+import aiAnimationPink from "../../../assets/animations/aiAnimationPink.json";
+import aiAnimationPurple from "../../../assets/animations/aiAnimationPurple.json";
+import aiAnimationTeal from "../../../assets/animations/aiAnimationTeal.json";
 
 //Benefits
 const benefitsDb = [
@@ -10,6 +13,8 @@ const benefitsDb = [
         description: "Just describe your business, and watch as AI transforms it into a stunning landing page. No coding required.",
         image: benefit1,
         alt: "AI Landing Page Builder",
+        animation: aiAnimationPink,
+        
     },
     {
         id: 2,
@@ -18,6 +23,8 @@ const benefitsDb = [
         description: "Our AI analyzes thousands of successful landing pages to create layouts proven to convert. Get industry-specific designs that speak to your audience.",
         image: benefit2,
         alt: "Smart Templates",
+        animation: aiAnimationTeal
+
     },
     {
         id: 3,
@@ -26,6 +33,7 @@ const benefitsDb = [
         description: "Watch changes happen live as you tweak your design.",
         image: benefit1,
         alt: "Real-time Customization",
+        animation: aiAnimationPink
     },
     {
         id: 4,
@@ -34,6 +42,7 @@ const benefitsDb = [
         description: "Built-in AI SEO tools optimize your content, meta tags, and structure for maximum visibility. Get found by the right audience without the technical hassle.",
         image: benefit2,
         alt: "SEO Optimization",
+        animation: aiAnimationPurple
     },
     {
         id: 5,
@@ -42,6 +51,7 @@ const benefitsDb = [
         description: "AI automatically adapts your design for all screen sizes. Get pixel-perfect responsive layouts that look amazing on phones, tablets, and desktops.",
         image: benefit1,
         alt: "Mobile Perfection",
+        animation: aiAnimationTeal
     },
 ];
 

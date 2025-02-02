@@ -60,7 +60,16 @@ const glowButtonStyle = {
 };
 
 
+// Hover scale animation
+const hoverScaleAnimation = {
+    transition: "transform 0.3s ease-in-out",
+    "&:hover": {
+        transform: "scale(1.02)",
+    },
+};
 
 
-export { containerStyleToolbar, containerStyleLeftColumn, containerStyleCenterColumn, glowButtonStyle };
+
+
+export { containerStyleToolbar, containerStyleLeftColumn, containerStyleCenterColumn, glowButtonStyle, hoverScaleAnimation };
 

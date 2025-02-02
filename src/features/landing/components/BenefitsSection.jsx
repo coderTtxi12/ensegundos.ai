@@ -42,6 +42,7 @@ function BenefitsSection() {
               subtitle={benefit.subtitle}
               image={benefit.image}
               alt={benefit.alt}
+              animation={benefit.animation}
               description={benefit.description}
               reversed={reversed}
             />

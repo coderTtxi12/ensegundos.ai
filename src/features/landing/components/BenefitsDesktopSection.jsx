@@ -2,6 +2,8 @@ import React from "react";
 import { Box, Grid, Typography, Button, Fade } from "@mui/material";
 import { glowButtonStyle } from "../../../styles/layoutStyles";
 import useTransitions from "../hooks/useTransitions";
+import Animation from "./Animation";
+
 
 function BenefitsDesktopSection(props) {
   // Custom hook for transitions
@@ -98,23 +100,34 @@ function BenefitsDesktopSection(props) {
       <Grid item md={6}>
         <Box ref={transitions.fade.ref}>
           <Fade direction="up" in={transitions.fade.inView} timeout={1000}>
-            <Box>
-              <Box
-                component="img"
-                src={props.image}
-                alt={props.alt}
-                sx={{
-                  width: "100%",
-                  height: "100%", // Make it square
-                  aspectRatio: "1/1", // Force square aspect ratio
-                  objectFit: "cover",
-                  borderRadius: 4,
-                  boxShadow: 3, // Added shadow for depth
-                  transition: "transform 0.3s ease-in-out",
-                  "&:hover": {
-                    transform: "scale(1.02)", // Subtle zoom on hover
-                  },
-                }}
+            <Box
+              sx={{
+                width: "100%",
+                aspectRatio: "1 / 1",
+                position: "relative",
+                backgroundColor: (theme) =>
+                  `${theme.palette.background.paper}80`,
+
+                // Rounded corners
+                borderRadius: 2,
+
+                // Positioning
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+
+                // Shadow
+                boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.6)",
+
+                overflow: "hidden",
+
+              }}
+            >
+              <Animation
+                lottieSrc={props.animation}
+                alt="My cool animation"
+                autoplay
+                loop
               />
             </Box>
           </Fade>

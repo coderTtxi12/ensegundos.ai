@@ -21,11 +21,9 @@ function Header() {
         boxShadow: "none", // Remove shadow
       }}
     >
-
       {/* Container style for consistent layout */}
 
       <Toolbar sx={containerStyleToolbar}>
-
         {/* Logo */}
 
         <Box sx={{ flexGrow: 1 }}>
