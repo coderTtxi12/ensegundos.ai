@@ -1,30 +1,38 @@
 import React from "react";
 import { Box, Grid, Typography, Button } from "@mui/material";
+import { glowButtonStyle } from "../../../styles/layoutStyles";
 
 function BenefitsMobileSection(props) {
   return (
-    <>
-      {/* Layout for mobile */}
-
-      <Grid container spacing={2} pt={8}>
-        {/* T1 */}
+    <Box sx={{ py: 6, px: 2 }}>
+      <Grid container spacing={4}>
         <Grid item xs={12}>
           <Typography
             variant="h6"
-            sx={{ color: "primary.main", textAlign: "center" }}
+            sx={{
+              color: "primary.main",
+              textAlign: "center",
+              fontWeight: 600,
+              mb: 1,
+            }}
           >
             {props.title}
           </Typography>
         </Grid>
 
-        {/* T2 */}
         <Grid item xs={12}>
-          <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: "bold",
+              textAlign: "center",
+              mb: 2,
+            }}
+          >
             {props.subtitle}
           </Typography>
         </Grid>
 
-        {/* Image */}
         <Grid item xs={12}>
           <Box
             component="img"
@@ -33,29 +41,39 @@ function BenefitsMobileSection(props) {
             sx={{
               width: "100%",
               borderRadius: 2,
+              boxShadow: (theme) =>
+                `0 8px 24px ${theme.palette.primary.main}20`,
             }}
           />
         </Grid>
 
-        {/* T3 */}
         <Grid item xs={12}>
-          <Typography variant="h6" sx={{ textAlign: "center" }}>
+          <Typography
+            variant="body1"
+            sx={{
+              textAlign: "center",
+              color: "text.secondary",
+              mb: 4,
+            }}
+          >
             {props.description}
           </Typography>
         </Grid>
 
-        {/* Button */}
-        <Grid item xs={12}>
+        <Grid item xs={12} sx={{ textAlign: "center" }}>
           <Button
             variant="contained"
             size="large"
-            sx={{ borderRadius: 20, textTransform: "none" }}
+            sx={{
+              ...glowButtonStyle,
+              minWidth: 200,
+            }}
           >
-            Sign up
+            Get Started Now
           </Button>
         </Grid>
       </Grid>
-    </>
+    </Box>
   );
 }
 

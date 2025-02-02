@@ -1,8 +1,9 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Fade } from "@mui/material";
 import BenefitsMobileSection from "./BenefitsMobileSection";
 import BenefitsDesktopSection from "./BenefitsDesktopSection";
 import benefitsDb from "../data/landingDb";
+import { containerStyleToolbar } from "../../../styles/layoutStyles";
 
 function BenefitsSection() {
   return (
@@ -11,16 +12,19 @@ function BenefitsSection() {
 
       <Box
         sx={{
-          px: 4,
           display: { xs: "none", md: "block" },
+          ...containerStyleToolbar,
+          flexDirection: "column",
         }}
       >
         <Typography
           variant="h2"
           sx={{
-            pb: 8,
+            mt: 10,
+            pb: 4,
             mb: 0,
             textAlign: "center",
+            color: "text.primary",
           }}
         >
           Typeform helps you understand customers

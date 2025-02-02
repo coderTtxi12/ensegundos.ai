@@ -34,19 +34,19 @@ const theme = createTheme({
     },
 
     typography: {
-        fontFamily: [
+        fontFamily: [ 
             'Montserrat',
             'Poppins',
             'Arial',
             'sans-serif'
         ].join(','),
         h1: {
-            fontSize: '3rem',   // ~48px
+            fontSize: '4rem',   // ~48px
             fontWeight: 700,
             lineHeight: 1.2,
         },
         h2: {
-            fontSize: '2.25rem', // ~36px
+            fontSize: '3rem', // ~36px
             fontWeight: 600,
             lineHeight: 1.3,
         },
@@ -56,7 +56,7 @@ const theme = createTheme({
             lineHeight: 1.3,
         },
         h6: {
-            fontWeight: "bold",
+            fontWeight: "normal",
         },
         body1: {
             fontSize: '1rem',   // ~16px
