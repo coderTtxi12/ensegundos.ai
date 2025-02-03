@@ -25,6 +25,7 @@ const theme = createTheme({
         background: {
             default: '#000000', // Solid black
             paper: '#1E1E1E',   // Dark gray for surfaces/panels
+            semiTransparent: 'rgba(0, 0, 0, 0.4)',
         },
         text: {
             primary: '#FFFFFF',
@@ -41,19 +42,22 @@ const theme = createTheme({
             'sans-serif'
         ].join(','),
         h1: {
-            fontSize: '3rem',   // ~48px
+            fontSize: '4rem',   // ~48px
             fontWeight: 700,
             lineHeight: 1.2,
         },
         h2: {
-            fontSize: '2.25rem', // ~36px
+            fontSize: '3rem', // ~36px
             fontWeight: 600,
-            lineHeight: 1.3,    // Pink for a branded highlight
+            lineHeight: 1.3,
         },
         h3: {
             fontSize: '2rem',   // ~32px
             fontWeight: 600,
             lineHeight: 1.3,
+        },
+        h6: {
+            fontWeight: "normal",
         },
         body1: {
             fontSize: '1rem',   // ~16px
@@ -77,13 +81,13 @@ const theme = createTheme({
                     textTransform: 'none',
                 },
                 containedPrimary: {
-                    // Slightly darker pink on hover
+                    // Slightly darker pink on hover for glow effect
                     '&:hover': {
                         backgroundColor: '#E01384',
                     },
                 },
                 containedSecondary: {
-                    // Keeping the purple accent hover
+                    // Keeping the purple accent hover for glow effect
                     '&:hover': {
                         backgroundColor: '#7a00e0',
                     },
@@ -120,6 +124,39 @@ const theme = createTheme({
                 },
             },
         },
+
+        // Custom styles for the footer
+
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                        color: '#FF1493',
+                        transform: 'translateY(-2px)',
+                    },
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                },
+            },
+        },
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                        transform: 'scale(1.2)',
+                    },
+                },
+            },
+        },
+
+
     },
 });
 

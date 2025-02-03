@@ -1,6 +1,28 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Box, Typography, Button, keyframes } from "@mui/material";
+import React from "react";
 
+import {
+  Box,
+  Typography,
+  Button,
+  keyframes,
+  Fade,
+  Slide,
+  Grow,
+  Zoom,
+  Collapse,
+} from "@mui/material";
+
+import useVantaBirds from "../hooks/useVantaBirds";
+
+import {
+  containerStyleLeftColumn,
+  containerStyleCenterColumn,
+  glowButtonStyle,
+} from "../../../styles/layoutStyles";
+
+import useTransitions from "../../../hooks/useTransitions";
+
+// Pulse animation keyframes for the gradient effect
 const pulse = keyframes`
   0%   { transform: scale(1);   opacity: 0.7; }
   50%  { transform: scale(1.2); opacity: 0.3; }
@@ -8,36 +30,31 @@ const pulse = keyframes`
 `;
 
 export default function HeroSection() {
-  const [vantaEffect, setVantaEffect] = useState(null);
-  const vantaRef = useRef(null);
+  // Custom hook for transitions
+  const transitions = useTransitions();
 
-  useEffect(() => {
-    if (!vantaEffect && window.VANTA) {
-      setVantaEffect(
-        window.VANTA.BIRDS({
-          el: vantaRef.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.0,
-          minWidth: 200.0,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          backgroundColor: 0x0,
-          backgroundAlpha: 0,
-          color1: 0xff1493,
-          color2: 0xff1493,
-          birdSize: 1.5,
-          wingSpan: 20.0,
-          separation: 50.0,
-          quantity: 5,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect]);
+  // Custom hook for Vanta Brids background
+  const { vantaRef } = useVantaBirds({
+
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.0,
+    minWidth: 200.0,
+    scale: 1.0,
+    scaleMobile: 1.0,
+    backgroundColor: 0x0,
+    backgroundAlpha: 0,
+    color1: 0xff1493, // Primary color
+    color2: 0xff1493, // Secondary color
+    birdSize: 1.5,
+    wingSpan: 20.0,
+    separation: 50.0,
+    quantity: 5,
+
+    onError: (error) => console.error('Vanta effect error:', error)
+
+  });
 
   return (
     <Box
@@ -47,8 +64,9 @@ export default function HeroSection() {
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        justifyContent: "center",
+        justifyContent: "center", // This is a key variable when trainning the AI model or maybe it is not
         overflow: "hidden",
+        // Gradient background layer
         background: (theme) => `
       radial-gradient(
         circle at 20% 20%,
@@ -61,7 +79,6 @@ export default function HeroSection() {
         ${theme.palette.background.paper} 100%
       )
     `,
-        px: 4,
       }}
     >
       {/* Gradient */}
@@ -101,52 +118,51 @@ export default function HeroSection() {
         }}
       />
 
+      {/* Content container */}
+
       <Box
         sx={{
           position: "relative",
           zIndex: 2,
-          textAlign: "center",
-          maxWidth: 800,
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          ...containerStyleCenterColumn,
         }}
       >
-        <Typography
-          variant="h1"
-          sx={{
-            mb: 2,
-            color: "text.primary",
-          }}
-        >
-          Build your next landing page inseconds with AI
-        </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 4,
-            color: "text.secondary",
-          }}
-        >
-          No code, no headaches.
-          <br />
-          Instantly generates beautiful, high-converting landing pages with AI-powered.
-        </Typography>
+        {/* Content */}
+
+        <Box ref={transitions.fadeOnce.ref}>
+          <Fade direction="up" in={transitions.fadeOnce.inView} timeout={1000}>
+            <Box>
+              <Typography
+                variant="h1"
+                sx={{
+                  mb: 2,
+                  color: "text.primary",
+                }}
+              >
+                Build your landing page inseconds with AI
+              </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  mb: 4,
+                  color: "text.secondary",
+                }}
+              >
+                No code, no headaches.
+                <br />
+                Instantly generates beautiful, high-converting landing pages
+                with AI-powered.
+              </Typography>
+            </Box>
+          </Fade>
+        </Box>
+
+        {/* Call to action button */}
         <Button
           variant="contained"
           color="primary"
           size="large"
-          sx={{
-            px: 4,
-            py: 1.5,
-            fontSize: "1.1rem",
-            fontWeight: 600,
-            boxShadow: (theme) => `0 0 20px ${theme.palette.primary.main}40`,
-            "&:hover": {
-              transform: "translateY(-2px)",
-              transition: "all 0.2s",
-            },
-          }}
+          sx={glowButtonStyle}
         >
           Get Started Now
         </Button>
