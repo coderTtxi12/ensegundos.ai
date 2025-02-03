@@ -25,6 +25,7 @@ const theme = createTheme({
         background: {
             default: '#000000', // Solid black
             paper: '#1E1E1E',   // Dark gray for surfaces/panels
+            semiTransparent:'rgba(0, 0, 0, 0.4)',
         },
         text: {
             primary: '#FFFFFF',

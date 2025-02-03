@@ -5,8 +5,13 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { containerStyleToolbar } from "../styles/layoutStyles";
+import { useHeaderTransform } from "../hooks/useHeaderTransform";
 
 function Header() {
+
+  // Custom hook for header scroll effect
+  const scrolled = useHeaderTransform(10);
+
   return (
     <AppBar
       position="fixed"
@@ -17,7 +22,12 @@ function Header() {
         top: 0,
         mx: "auto", // Margin-left: auto; Margin-right: auto
         width: "100%",
-        backgroundColor: "transparent",
+        backgroundColor: scrolled
+          ? (theme) => `${theme.palette.background.semiTransparent}`
+          : "transparent",
+        backdropFilter: scrolled ? "blur(8px)" : "none",
+        WebkitBackdropFilter: scrolled ? "blur(8px)" : "none", // Safari support
+        transition: "background-color 0.3s ease-in-out",
         boxShadow: "none", // Remove shadow
       }}
     >

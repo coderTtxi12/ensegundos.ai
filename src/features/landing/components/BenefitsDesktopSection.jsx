@@ -1,9 +1,8 @@
 import React from "react";
 import { Box, Grid, Typography, Button, Fade } from "@mui/material";
 import { glowButtonStyle } from "../../../styles/layoutStyles";
-import useTransitions from "../hooks/useTransitions";
+import useTransitions from "../../../hooks/useTransitions";
 import Animation from "./Animation";
-
 
 function BenefitsDesktopSection(props) {
   // Custom hook for transitions
@@ -118,9 +117,7 @@ function BenefitsDesktopSection(props) {
 
                 // Shadow
                 boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.6)",
-
                 overflow: "hidden",
-
               }}
             >
               <Animation

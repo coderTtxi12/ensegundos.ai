@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Typography, Fade } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import BenefitsMobileSection from "./BenefitsMobileSection";
 import BenefitsDesktopSection from "./BenefitsDesktopSection";
 import benefitsDb from "../data/landingDb";

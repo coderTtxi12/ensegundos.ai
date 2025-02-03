@@ -19,7 +19,7 @@ import {
   glowButtonStyle,
 } from "../../../styles/layoutStyles";
 
-import useTransitions from "../hooks/useTransitions";
+import useTransitions from "../../../hooks/useTransitions";
 
 // Pulse animation keyframes for the gradient effect
 const pulse = keyframes`
