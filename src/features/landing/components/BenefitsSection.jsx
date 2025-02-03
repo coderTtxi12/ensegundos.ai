@@ -28,7 +28,7 @@ function BenefitsSection() {
             mb: 0,
             textAlign: "center",
             color: "text.primary",
-            display: { xs: "none", sm: "none" }, // Add this line
+            display: { xs: "none", sm: "none", md: "block" }, // Add this line
           }}
         >
           Typeform helps you understand customers
