@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   Box,
   Typography,
@@ -34,6 +35,7 @@ export default function HeroSection() {
 
   // Custom hook for Vanta Brids background
   const { vantaRef } = useVantaBirds({
+
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -49,6 +51,9 @@ export default function HeroSection() {
     wingSpan: 20.0,
     separation: 50.0,
     quantity: 5,
+
+    onError: (error) => console.error('Vanta effect error:', error)
+
   });
 
   return (

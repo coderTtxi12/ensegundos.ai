@@ -15,6 +15,7 @@ function BenefitsDesktopSection(props) {
       sx={{
         mb: { md: 8 },
         py: 6, // Add vertical padding
+        display: { xs: 'none', sm: 'none', md: 'flex' } // Add this line
       }}
       direction={{ md: props.reversed ? "row-reverse" : "row" }}
     >
@@ -30,10 +31,7 @@ function BenefitsDesktopSection(props) {
                   color: "primary.main",
                   mb: 1,
                   display: "block",
-                  textAlign: {
-                    xs: "center",
-                    sm: "left",
-                  },
+                  textAlign: "left",
                 }}
               >
                 {props.title}
@@ -52,9 +50,7 @@ function BenefitsDesktopSection(props) {
                 sx={{
                   mb: 2,
                   color: "text.primary",
-                  textAlign: {
-                    sm: "left",
-                  },
+                  textAlign: "left",
                 }}
               >
                 {props.subtitle}
@@ -73,9 +69,7 @@ function BenefitsDesktopSection(props) {
                 sx={{
                   color: "text.secondary",
                   mb: 4, // Increased spacing
-                  textAlign: {
-                    sm: "left",
-                  },
+                  textAlign: "left",
                   lineHeight: 1.6, // Improved readability
                 }}
               >
@@ -96,6 +90,7 @@ function BenefitsDesktopSection(props) {
         </Button>
       </Grid>
 
+      {/* Animation */}
       <Grid item md={6}>
         <Box ref={transitions.fade.ref}>
           <Fade direction="up" in={transitions.fade.inView} timeout={1000}>

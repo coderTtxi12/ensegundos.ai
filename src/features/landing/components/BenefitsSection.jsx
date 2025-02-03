@@ -3,7 +3,10 @@ import { Box, Typography } from "@mui/material";
 import BenefitsMobileSection from "./BenefitsMobileSection";
 import BenefitsDesktopSection from "./BenefitsDesktopSection";
 import benefitsDb from "../data/landingDb";
-import { containerStyleToolbar } from "../../../styles/layoutStyles";
+import {
+  containerStyleToolbar,
+  containerStyleCenterColumn,
+} from "../../../styles/layoutStyles";
 
 function BenefitsSection() {
   return (
@@ -12,7 +15,7 @@ function BenefitsSection() {
 
       <Box
         sx={{
-          display: { xs: "none", md: "block" },
+          display: { xs: "none", sm: "none", md: "block" },
           ...containerStyleToolbar,
           flexDirection: "column",
         }}
@@ -25,6 +28,7 @@ function BenefitsSection() {
             mb: 0,
             textAlign: "center",
             color: "text.primary",
+            display: { xs: "none", sm: "none" }, // Add this line
           }}
         >
           Typeform helps you understand customers
@@ -51,12 +55,19 @@ function BenefitsSection() {
       </Box>
 
       {/* Mobile version: shown only on small screens */}
-      <Box sx={{ display: { xs: "block", md: "none" } }}>
+      <Box
+        sx={{
+          display: { xs: "block", md: "none" },
+        }}
+      >
         <Typography
-          variant="h4"
+          variant="h3"
           sx={{
+            mt: 8,
+            pb: 2,
             mb: 0,
             textAlign: "center",
+            color: "text.primary",
           }}
         >
           Typeform helps you understand customers
@@ -70,6 +81,7 @@ function BenefitsSection() {
               subtitle={benefit.subtitle}
               image={benefit.image}
               alt={benefit.alt}
+              animation={benefit.animation}
               description={benefit.description}
             />
           );
