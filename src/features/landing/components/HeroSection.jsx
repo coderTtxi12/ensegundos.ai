@@ -157,7 +157,7 @@ export default function HeroSection() {
           </Fade>
         </Box>
 
-        {/* Call-to-action button */}
+        {/* Call to action button */}
         <Button
           variant="contained"
           color="primary"

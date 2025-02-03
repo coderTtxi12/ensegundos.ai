@@ -25,7 +25,7 @@ const theme = createTheme({
         background: {
             default: '#000000', // Solid black
             paper: '#1E1E1E',   // Dark gray for surfaces/panels
-            semiTransparent:'rgba(0, 0, 0, 0.4)',
+            semiTransparent: 'rgba(0, 0, 0, 0.4)',
         },
         text: {
             primary: '#FFFFFF',
@@ -35,7 +35,7 @@ const theme = createTheme({
     },
 
     typography: {
-        fontFamily: [ 
+        fontFamily: [
             'Montserrat',
             'Poppins',
             'Arial',
@@ -124,6 +124,39 @@ const theme = createTheme({
                 },
             },
         },
+
+        // Custom styles for the footer
+
+        MuiLink: {
+            styleOverrides: {
+                root: {
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                        color: '#FF1493',
+                        transform: 'translateY(-2px)',
+                    },
+                },
+            },
+        },
+        MuiDivider: {
+            styleOverrides: {
+                root: {
+                    borderColor: 'rgba(255, 255, 255, 0.1)',
+                },
+            },
+        },
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    transition: 'all 0.2s ease-in-out',
+                    '&:hover': {
+                        transform: 'scale(1.2)',
+                    },
+                },
+            },
+        },
+
+
     },
 });
 
