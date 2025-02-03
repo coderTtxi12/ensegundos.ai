@@ -31,7 +31,7 @@ function BenefitsSection() {
             display: { xs: "none", sm: "none", md: "block" }, // Add this line
           }}
         >
-          Typeform helps you understand customers
+          Create stunning landing pages inseconds
         </Typography>
 
         {benefitsDb.map((benefit, index) => {
@@ -70,7 +70,7 @@ function BenefitsSection() {
             color: "text.primary",
           }}
         >
-          Typeform helps you understand customers
+          Create stunning landing pages inseconds
         </Typography>
         {benefitsDb.map((benefit) => {
           return (

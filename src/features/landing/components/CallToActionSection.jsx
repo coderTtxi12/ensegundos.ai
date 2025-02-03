@@ -91,11 +91,11 @@ function CallToActionSection() {
         }}
       >
         <Typography variant="h2" sx={{ mb: 2, color: "text.primary" }}>
-          Transform Your Ideas Into Reality
+          Lightning-fast & easy to use
         </Typography>
 
         <Typography variant="h6" sx={{ mb: 4, color: "text.secondary" }}>
-          Generate beautiful landing pages in seconds with AI
+          Generate beautiful landing pages inseconds with AI
         </Typography>
 
         <Box sx={{ display: "inline-flex", gap: 2 }}>

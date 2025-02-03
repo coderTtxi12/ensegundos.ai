@@ -139,7 +139,7 @@ export default function HeroSection() {
                   color: "text.primary",
                 }}
               >
-                Build your next landing page inseconds with AI
+                Build your landing page inseconds with AI
               </Typography>
               <Typography
                 variant="body1"

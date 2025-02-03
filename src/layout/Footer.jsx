@@ -54,7 +54,7 @@ function Footer() {
             inseconds.ai
           </Typography>
           <Typography variant="body2" sx={{ color: "text.secondary" }}>
-            Generate landing pages in seconds with AI
+            Generate beautiful landing pages in seconds with AI
           </Typography>
         </Box>
 
