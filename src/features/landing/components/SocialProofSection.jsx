@@ -21,6 +21,7 @@ function SocialProofSection() {
       sx={{
         py: 0,
         px: { xs: 0, md: 6 },
+    
         overflow: "hidden",
         position: "relative",
         backgroundColor: "background.default", // Uses theme background color

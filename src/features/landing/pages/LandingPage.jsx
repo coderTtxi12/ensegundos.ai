@@ -3,6 +3,8 @@ import Header from "../../../layout/Header";
 import HeroSection from "../components/HeroSection";
 import BenefitsSection from "../components/BenefitsSection";
 import TransitionsDemo from "../components/TransitionsDemo";
+import SocialProofSection from "../components/SocialProofSection";
+import CallToActionSection from "../components/CallToActionSection";
 import "../styles/landing.css";
 
 function LandingPage() {
@@ -11,7 +13,10 @@ function LandingPage() {
       <Header />
       <HeroSection />
       <BenefitsSection />
-      <TransitionsDemo />
+      <SocialProofSection />
+      <CallToActionSection />
+
+
     </div>
   );
 }
