@@ -72,7 +72,7 @@ export default function ContactSection() {
         elevation={3}
         sx={{
           p: 4,
-          bgcolor: "background.paper",
+          bgcolor: "background.default",
           borderRadius: 2,
           width: "100%",
           maxWidth: 500,
