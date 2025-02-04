@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 import {
   Box,
@@ -29,13 +30,21 @@ const pulse = keyframes`
   100% { transform: scale(1);   opacity: 0.7; }
 `;
 
-export default function HeroSection() {
+function HeroSection() {
+  // Custom hook for navigation
+  const navigate = useNavigate();
+
+  const handleGenerate = () => {
+    // Potentially do other logic here, e.g. call a REST API,
+    // store something in Redux or context, etc.
+    navigate("/prompt");
+  };
+
   // Custom hook for transitions
   const transitions = useTransitions();
 
   // Custom hook for Vanta Brids background
   const { vantaRef } = useVantaBirds({
-
     mouseControls: true,
     touchControls: true,
     gyroControls: false,
@@ -52,8 +61,7 @@ export default function HeroSection() {
     separation: 50.0,
     quantity: 5,
 
-    onError: (error) => console.error('Vanta effect error:', error)
-
+    onError: (error) => console.error("Vanta effect error:", error),
   });
 
   return (
@@ -163,6 +171,7 @@ export default function HeroSection() {
           color="primary"
           size="large"
           sx={glowButtonStyle}
+          onClick={handleGenerate}
         >
           Get Started Now
         </Button>
@@ -170,3 +179,5 @@ export default function HeroSection() {
     </Box>
   );
 }
+
+export default HeroSection;

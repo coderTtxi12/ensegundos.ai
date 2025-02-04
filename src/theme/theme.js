@@ -74,6 +74,23 @@ const theme = createTheme({
     },
 
     components: {
+
+        // Background for inner pages
+        MuiCssBaseline: {
+            styleOverrides: {
+                html: {
+                    backgroundColor: '#1E1E1E !important',
+                },
+                body: {
+                    backgroundColor: '#1E1E1E !important',
+                },
+                '#root': {
+                    backgroundColor: '#1E1E1E !important',
+                },
+            },
+        },
+
+        // Custom styles for the header
         MuiButton: {
             styleOverrides: {
                 root: {
@@ -145,6 +162,7 @@ const theme = createTheme({
                 },
             },
         },
+
         MuiSvgIcon: {
             styleOverrides: {
                 root: {

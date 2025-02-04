@@ -20,7 +20,6 @@ function Footer() {
     <Box
       component="footer"
       sx={{
-        borderTop: "1px solid",
         ...containerStyleToolbar,
         flexDirection: "column",
         mt: 8,

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -6,9 +7,9 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { containerStyleToolbar } from "../styles/layoutStyles";
 import { useHeaderTransform } from "../hooks/useHeaderTransform";
+import LogoutIcon from "@mui/icons-material/Logout";
 
-function Header() {
-
+function Header(props) {
   // Custom hook for header scroll effect
   const scrolled = useHeaderTransform(10);
 
@@ -45,29 +46,44 @@ function Header() {
           </Typography>
         </Box>
 
-        {/* Navigation links */}
-        <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Box sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}>
+        {props.landing ? (
+          // Navigation links landing
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: { xs: "none", md: "flex" }, mr: 2 }}>
+              <Button
+                sx={{ mr: 2, textTransform: "none", color: "text.primary" }}
+              >
+                Pricing
+              </Button>
+            </Box>
+
             <Button
-              sx={{ mr: 2, textTransform: "none", color: "text.primary" }}
+              variant="contained"
+              color="primary"
+              size="large"
+              sx={{
+                textTransform: "none",
+                color: "text.primary",
+                fontWeight: 600,
+              }}
             >
-              Pricing
+              Get Started
             </Button>
           </Box>
-
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            sx={{
-              textTransform: "none",
-              color: "text.primary",
-              fontWeight: 600,
-            }}
-          >
-            Get Started
-          </Button>
-        </Box>
+        ) : (
+          // Navigation links inner pages
+          <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Button
+              startIcon={<LogoutIcon />}
+              sx={{
+                textTransform: "none",
+                color: "text.primary",
+              }}
+            >
+              Log Out
+            </Button>
+          </Box>
+        )}
       </Toolbar>
     </AppBar>
   );

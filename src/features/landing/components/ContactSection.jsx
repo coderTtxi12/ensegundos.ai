@@ -13,7 +13,7 @@ import {
   glowButtonStyle,
 } from "../../../styles/layoutStyles";
 
-export default function ContactSection() {
+function ContactSection() {
   return (
     <Container sx={{ ...containerStyleCenterColumn, py: 8 }}>
       {/* Title section for large screens */}
@@ -231,3 +231,5 @@ export default function ContactSection() {
     </Container>
   );
 }
+
+export default ContactSection;
