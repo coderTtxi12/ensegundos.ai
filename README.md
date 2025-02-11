@@ -47,15 +47,23 @@ Follow these steps to get started with the project:
    ```
 
 2. **Install Dependencies:**
+
+   ```bash
    npm install
+
+   ```
 
 3. **Install Dependencies:**
 
+   ```bash
    npm run dev
+   ```
 
 4. **Install Dependencies:**
 
+   ```bash
    npm run build
+   ```
 
    This command compiles an optimized version of the app for production deployment.
 
@@ -80,9 +88,16 @@ Contributions are welcome! If you'd like to contribute, please follow these step
    git checkout -b feature/YourFeature
    ```
 3. **CMake your changes and commit them:**
+
+   ```bash
    git commit -m 'Add some feature'
+   ```
 
 4. **Push to your branch:**
+
+   ```bash
    git push origin feature/YourFeature
+
+   ```
 
 5. **Open a pull request**

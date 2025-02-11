@@ -34,7 +34,7 @@ function HeroSection() {
   // Custom hook for navigation
   const navigate = useNavigate();
 
-  const handleGenerate = () => {
+  const handleStart = () => {
     // Potentially do other logic here, e.g. call a REST API,
     // store something in Redux or context, etc.
     navigate("/prompt");
@@ -171,7 +171,7 @@ function HeroSection() {
           color="primary"
           size="large"
           sx={glowButtonStyle}
-          onClick={handleGenerate}
+          onClick={handleStart}
         >
           Get Started Now
         </Button>

@@ -16,6 +16,7 @@ import {
 } from "../../../styles/layoutStyles";
 
 function PromptSection() {
+  
   const [formData, setFormData] = useState({
     businessName: "",
     businessDescription: "",

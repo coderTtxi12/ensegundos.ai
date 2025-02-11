@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -8,8 +7,11 @@ import Box from "@mui/material/Box";
 import { containerStyleToolbar } from "../styles/layoutStyles";
 import { useHeaderTransform } from "../hooks/useHeaderTransform";
 import LogoutIcon from "@mui/icons-material/Logout";
+import { useNavigate } from "react-router-dom";
+import { Link as MuiLink } from '@mui/material';
 
 function Header(props) {
+  const navigate = useNavigate();
   // Custom hook for header scroll effect
   const scrolled = useHeaderTransform(10);
 
@@ -35,15 +37,24 @@ function Header(props) {
       {/* Container style for consistent layout */}
 
       <Toolbar sx={containerStyleToolbar}>
+
         {/* Logo */}
 
         <Box sx={{ flexGrow: 1 }}>
-          <Typography
-            variant="h6"
-            sx={{ fontWeight: "bold", color: "text.primary" }}
+          <MuiLink
+            onClick={() => navigate("/")}
+            sx={{
+              cursor: "pointer",
+              textDecoration: "none",
+            }}
           >
-            inseconds.ai
-          </Typography>
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: "bold", color: "text.primary" }}
+            >
+              inseconds.ai
+            </Typography>
+          </MuiLink>
         </Box>
 
         {props.landing ? (
